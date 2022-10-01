@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- fa aweswome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+  <title>SHT!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-primary">
+    <div class="container my-container-nav">
+      <a class="navbar-brand" href="#">Solo Tour</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse link-hover" id="navbarNavDropdown">
+        <ul class="ms-auto navbar-nav j2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Wisata
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/alam">Alam</a></li>
+              <li><a class="dropdown-item" href="/edukasi">Edukasi</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Tongkrongan
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/detailcafe">Cafe</a></li>
+              <li><a class="dropdown-item" href="/listtaman">Taman</a></li>
+              <li><a class="dropdown-item" href="/angkringan">Angkringan</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="bungkus j3 mx-auto me-lg-2">
+          <form class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    @yield('content')
+ 
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row bag-1">
+        <div class="col-6 col-lg-3 col-md-6 col-sm-6">
+          <img src="assets/Re.png" style="max-width: 100vw; max-height:100vh;" alt="">
+        </div>
+        <div class="col-6 col-lg-2 col-md-6 col-sm-6 d-flex flex-column">
+          <h5 class="fw-bold">Artikel terbaru</h5>
+          <a href="">About</a>
+          <a href="">Destination Highlight</a>
+          <a href="">Spot Rekomendasi</a>
+        </div>
+        <div class="col-6 d-flex col-lg-2 col-md-6 col-sm-6 flex-column">
+          <h5 class="fw-bold">UFFBI</h5>
+          <a href="">Donate</a>
+          <a href="">Credit Us</a>
+          <a href="">Advertisement</a>
+        </div>
+        <div class="col-6 col-lg-2 col-md-6 col-sm-6 d-flex flex-column">
+          <h5 class="fw-bold">Tongkrongan</h5>
+          <a href="">Cafe</a>
+          <a href="">Angkringan</a>
+          <a href="">Taman</a>
+        </div>
+        <div class="col-6 col-lg-2 col-md-6 col-sm-6 d-flex flex-column">
+          <h5 class="fw-bold">Wisata</h5>
+          <a href="">Alam</a>
+          <a href="">Edukasi</a>
+        </div>
+        <div class="col-6 col-lg-1 col-md-6 col-sm-6 d-flex flex-column">
+          <h5 class="fw-bold">Team</h5>
+          <a href="">M.Ramadhaniyanto</a>
+          <a href="">Habib I</a>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col-4 col-lg-3 col-md-6 col-sm-6 sosmed fw-bold">
+          <a href=""><i class="fa-brands fa-instagram fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-twitter fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-facebook fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-linkedin fa-2x"></i></a>
+        </div>
+        <div class="col-6 col-lg-9 col-md-6 col-sm-6 bot-footer mb-3"></div>
+      </div>
+      <div class="row">
+        <span class="col-3 col-lg-3 col-md-6 col-sm-6 "></span>
+        <p class="text-center fw-bold col-8 col-lg-8 col-md-6 col-sm-6">Copyright by Mohammad Ramadhaniyanto &
+          Habib Ismail</p>
+        <span class="col-2 col-lg-3 col-md-6 col-sm-6"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- endFooter -->
+
+
+
+  <!-- end caraousel slider -->
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

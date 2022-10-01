@@ -1,0 +1,871 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellota:wght@400;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.bg-primary {
+    background-color: #42c3a7 !important;
+}
+
+body {
+    background-color: #182748;
+}
+
+.judul-awal {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+/* ==============HALAMAN INDEX/HOME =================  */
+/* Navbar */
+@media screen and (min-width: 1084px) {
+    .my-container-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+nav {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 30px;
+    min-height: 75px;
+    color: #000000;
+}
+
+.ip-search {
+    background: rgba(217, 217, 217, 0.5);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.j2 {
+    order: 3;
+}
+
+.j3 {
+    order: 2;
+}
+
+.bt-search {
+    height: 41px;
+    display: block;
+    width: 295px;
+    top: 18px;
+}
+
+.bungkus {
+    position: relative;
+}
+
+.dropdown-menu {
+    background-color: #11ac8b8b;
+}
+
+.link-hover ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #182748;
+}
+
+/* end navbar */
+
+/* Caraousel */
+.carousel-itemku {
+    height: 100vh;
+    min-height: 300px;
+}
+.carousel-caption {
+    bottom: 275px;
+    z-index: 2;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+.carousel-innerku:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.x-100 {
+    min-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel-caption {
+        bottom: 250px;
+    }
+    .carousel-caption p {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .carousel-caption {
+        bottom: 300px;
+    }
+    .carousel-caption h5 {
+        font-size: 17px;
+    }
+    .carousel-caption a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    .carousel-caption p {
+        width: 100%;
+        line-height: 1.6;
+        font-size: 12px;
+    }
+}
+
+/* end caraousel */
+
+/* Destination Highlight */
+.des-high {
+    min-height: 100vh;
+    font-family: "poppins", "";
+    margin-top: 60px;
+}
+
+.des-jud {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+.card-ku {
+    margin-top: 25px;
+    color: white;
+}
+
+.card {
+    background-color: #182748;
+    border: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.a-more {
+    display: block;
+    position: absolute;
+    margin-top: 260px;
+    text-decoration: none;
+    margin-left: 100px;
+}
+
+/* Responsive News Destination edu */
+@media screen and (min-width: 992px) {
+    .a-more {
+        display: block;
+        position: absolute;
+        margin-top: 260px;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .a-more {
+        display: block;
+        position: absolute;
+        margin-top: 260px;
+        text-decoration: none;
+        margin-left: 130px !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .a-more {
+        display: block;
+        position: absolute;
+        margin-top: 260px;
+        text-decoration: none;
+        margin-left: 185px !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .a-more {
+        display: block;
+        position: absolute;
+        margin-top: 260px;
+        text-decoration: none;
+        margin-left: 180px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .a-more {
+        display: block;
+        position: absolute;
+        margin-top: 260px;
+        text-decoration: none;
+        margin-left: 199px;
+    }
+    .card {
+        align-items: center;
+        text-align: center;
+    }
+}
+/* END Responsive News Destination edu */
+
+.card-img-top {
+    width: 295px;
+    height: 295px;
+    box-sizing: border-box;
+    display: block;
+}
+#zoom {
+    overflow: hidden;
+}
+
+.card #zoom img {
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+
+.card #zoom:hover img {
+    transform: scale(1.5);
+}
+
+/* end highliht */
+
+/* Spot Rekomendasi */
+.spot {
+    margin-top: 50px;
+    min-height: 100vh;
+    font-family: "Poppins";
+    font-weight: 200;
+}
+
+.spot h3 {
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+.spot-jud {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+.carousel-ku {
+    max-height: 100vh !important;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+/* End Spot */
+
+/* About & news */
+
+p > .img-about {
+    margin-top: 30px !important;
+    width: 320px;
+    height: 224px;
+}
+
+@media screen and (max-width: 985px) {
+    p > .img-about {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.jud-about > h2 {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+.h-news {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    font-weight: 700;
+}
+
+.about p {
+    font-family: "Poppins";
+    font-weight: 200;
+}
+.news-p {
+    font-family: "Poppins";
+    font-weight: 200;
+}
+
+/* end about and news */
+
+/* footer */
+footer {
+    background-color: #42c3a7;
+    padding-top: 30px;
+    margin-top: 60px;
+    color: #23314c;
+}
+
+.bot-footer {
+    border-bottom: 2px solid #23314c;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.sosmed a {
+    color: white !important;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+footer .bag-1 a {
+    color: #23314c !important;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* end footer */
+
+/* ==============END HALAMAN INDEX/HOME =================  */
+
+/* ============== HALAMAN DETAIL TAMAN ==================*/
+
+/* Taman */
+
+.ff-taman {
+    font-family: "Bellota", sans-serif !important;
+    font-weight: 700;
+}
+
+.img-tamanfav {
+    width: 100%;
+    max-height: 500px;
+}
+
+.bg-taman {
+    border-radius: 30px;
+    background-color: #394f79;
+}
+
+.border-bot {
+    border-bottom: 2px solid #42c3a7;
+}
+
+.text-taman {
+    position: absolute;
+    margin-top: 200px;
+}
+.text-taman2 {
+    position: absolute;
+    margin-top: 140px;
+}
+
+.img-taman > img {
+    opacity: 0.55 !important;
+}
+
+.card {
+    border-radius: 30px;
+}
+
+.btn-bg {
+    background-color: #42c3a7;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 150px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 400px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 130px;
+        margin-left: -190px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 130px;
+        margin-left: -190px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 140px;
+        margin-left: 15px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 60px;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 455px) {
+    .text-taman {
+        position: absolute;
+        margin-left: -220px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 160px;
+        margin-left: -220px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 80px;
+        margin-left: 15px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 250px;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 575px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 200px;
+        margin-left: -300px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 200px;
+        margin-left: -300px;
+    }
+}
+/* End Taman */
+
+/* ============== END HALAMAN DETAIL TAMAN ==================*/
+
+/* ============== HALAMAN DETAIL CAFE =====================*/
+.cafe {
+    padding-top: 90px;
+}
+
+.cafe-kiri {
+    width: 220px;
+    height: 180px;
+    background-color: #394f79;
+    margin-right: 20px;
+    border-radius: 20px;
+    font-family: "Bellota", sans-serif !important;
+    font-weight: 700;
+}
+
+/* Tengah */
+.cafe-tengah {
+    margin: 0;
+    color: #f9fafc;
+    box-sizing: border-box;
+    padding: 0px;
+    background-color: #394f79;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    font-family: "Bellota", sans-serif;
+}
+
+.gambar-tengah {
+    max-width: 100%;
+    border-radius: 50px;
+    height: 40%;
+    padding-top: 10px;
+}
+
+.nama-halaman {
+    font-family: "Bellota", sans-serif;
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.horizontal-cafe {
+    border-bottom: 2px solid #42c3a7;
+}
+
+.isi-cafe h4 {
+    margin-left: 20px;
+    font-family: "Bellota", sans-serif;
+    font-weight: 700;
+}
+
+.isi-gambar img {
+    max-width: 290px;
+    height: 270px;
+    margin-left: 10px;
+}
+
+.isi-gambar-2 img {
+    max-width: 200px;
+    height: 125px;
+    margin-left: 20px;
+}
+
+.deskripsi-cafe,
+.deskripsi-cafe p {
+    margin-left: 10px;
+    font-family: "Bellota", sans-serif;
+}
+/* End Tengah */
+
+/* Kanan */
+.cafe-kanan {
+    border-radius: 20px;
+}
+
+.gambar-kanan {
+    width: 290px;
+    height: 251px;
+    border-radius: 20px;
+}
+
+.info-cafe {
+    width: 290px;
+    border-radius: 20px;
+    height: 262px;
+    margin-top: 10px;
+    background-color: #394f79;
+    color: white;
+}
+
+.info-cafe ul li {
+    list-style: none;
+    margin: 25px 0;
+    font-size: 14px;
+    font-family: "Bellota", sans-serif;
+    font-weight: 700;
+}
+
+.info-cafe ul li:nth-child(3) {
+    margin-top: 60px;
+}
+
+.icon-cafe {
+    margin-left: 20px;
+    color: #42c3a7;
+    padding-top: 25px;
+}
+
+.rekomendasi-cafe {
+    width: 290px;
+    border-radius: 20px;
+    height: 262px;
+    margin-top: 10px;
+    background-color: #394f79;
+    color: white;
+}
+
+.rekomendasi-cafe h5 {
+    margin-left: 20px;
+    padding-top: 20px;
+    font-family: "Bellota", sans-serif;
+    font-weight: 700;
+}
+
+.rekomendasi-cafe ul li {
+    list-style: none;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.rekomendasi-cafe a {
+    text-decoration: none;
+    color: #d9d9d9;
+}
+
+.icon-rekomendasi i {
+    margin-left: 20px;
+    margin-top: 9px;
+}
+
+/* Efek SM */
+.tengah-sm {
+    margin-left: 10px;
+    display: none;
+}
+
+.place-information ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+/* End Efek SM */
+/* end Kanan */
+
+/* Responsive Cafe */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .tengah-sm {
+        display: block !important;
+    }
+
+    .icon-tengah-sm i {
+        margin-left: 15px;
+    }
+
+    .icon-tengah-sm i:nth-child(1) {
+        margin-left: 18px;
+    }
+
+    .information-sm ul li:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    .information-sm ul li:nth-child(3) {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cafe-kiri,
+    .cafe-kanan {
+        display: none;
+    }
+
+    .isi-gambar img {
+        max-width: 270px;
+        height: 270px;
+        margin-left: 10px;
+    }
+
+    .tengah-sm {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .isi-gambar-2 img {
+        max-width: 270px;
+        height: 270px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 409px) {
+    .icon-tengah-sm i {
+        padding-top: 20px;
+        margin-left: 10px;
+    }
+
+    .icon-tengah-sm i:nth-child(1) {
+        margin-left: 13px;
+    }
+    .icon-tengah-sm i:nth-child(2) {
+        padding-top: 53px;
+    }
+
+    .information-sm li {
+        padding-top: 10px;
+    }
+    .information-sm li:nth-child(3) {
+        padding-top: 15px;
+    }
+}
+
+@media screen and (min-width: 410px) {
+    .icon-tengah-sm i {
+        padding-top: 20px;
+    }
+    .icon-tengah-sm i:nth-child(2) {
+        padding-top: 30px;
+    }
+
+    .information-sm li {
+        padding-top: 10px;
+    }
+    .information-sm li:nth-child(3) {
+        padding-top: 15px;
+    }
+}
+/* Responsive Cafe */
+
+/* ============== END HALAMAN DETAIL CAFE =====================*/
+
+/* ============== HALAMAN EDUKASI =================  */
+/* Gambar */
+.gambar {
+    background-image: url("../assets/solo.jpg");
+    height: 422px;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    background-position: 0 -230px;
+    min-width: 100%;
+    margin-top: 70px;
+}
+
+@media screen and (max-width: 1000px) {
+    .gambar {
+        background-attachment: scroll;
+        background-size: cover;
+        overflow: hidden;
+        max-width: 100vw;
+        background-position: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gambar {
+        background-attachment: scroll;
+        background-size: cover;
+        overflow: hidden;
+        max-width: 100vw;
+        background-position: -100px 10px;
+    }
+}
+
+.p-img {
+    margin-top: 15px;
+    color: white;
+    font-weight: 300;
+    font-family: "Bellota";
+    border-bottom: 2px solid #42c3a7;
+}
+
+.ed-c4 {
+    border-bottom: 2px solid #42c3a7;
+    font-family: "Bellota";
+    color: white;
+    font-weight: 700;
+}
+/* End Gambar */
+
+/* Wisata Edukasi Bag 2  */
+.ed-sos > a {
+    color: white;
+    margin: 5px 10px;
+}
+
+@media screen and (max-width: 588px) {
+    .thumb-img {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.thumb-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.thumb-img .box img {
+    max-width: 175px;
+    margin: 0 10px 10px 10px;
+    min-height: 120px;
+}
+
+/* End Wisata Edukasi Bag2 */
+
+/* Reviews */
+
+.reviews-item {
+    width: 260px;
+    margin-right: 12px;
+    word-wrap: break-word;
+    height: 270px;
+    background: #f9fafc;
+    border-radius: 4px 150px 8px 10px;
+}
+
+.reviews-item > i {
+    color: #42c3a7;
+}
+
+.reviews-item p {
+    color: black;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.span-user {
+    font-size: 20px;
+    font-family: "Bellota";
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* End Reviews */
+
+/* News Destination */
+.des-news {
+    font-family: "poppins", "";
+    margin-top: 60px;
+}
+/* End News Destination */
+
+/* Detail Informasi */
+
+.icon-detail-informasi i {
+    padding-top: 15px;
+}
+
+.icon-detail-informasi i:nth-child(1) {
+    margin-left: 4px;
+}
+
+.list-detail-informasi ul li {
+    padding-top: 12px;
+    list-style: none;
+}
+
+.list-detail-informasi ul li:nth-child(3) {
+    padding-top: 25px;
+}
+
+.header-detail-informasi {
+    border-bottom: #42c3a7 2px solid;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .icon-detail-informasi i:nth-child(2) {
+        padding-top: 40px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .icon-detail-informasi i {
+        margin-left: 15px !important;
+    }
+    .icon-detail-informasi i:nth-child(2) {
+        padding-top: 40px;
+    }
+}
+/*End Detail Informasi */
+
+/* ============= END HALAMAN EDUKASI =============== */
+
+/* ============= HALAMAN WISATA ALAM =============== */
+
+/* ============= END HALAMAN WISATA ALAM =============== */

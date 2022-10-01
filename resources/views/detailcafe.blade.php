@@ -90,7 +90,7 @@
                         <div class="col-lg-11">
                             <ul>
                                 <li>Lorem, ipsum dolor sit amet consectetur adipisicing
-                                    elit. Laboriosam, reiciendis.</li>
+                                    elit. Laboriosam, reiciendis Jawa barat indonesia.</li>
                                 <li>Lorem ipsum dolor sit amet.</li>
                                 <li>087754621313</li>
                             </ul>

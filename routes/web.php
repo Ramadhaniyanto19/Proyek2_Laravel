@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Function_;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlamController;
+use App\Http\Controllers\AngkringanController;
+use App\Http\Controllers\CafeController;
+use App\Http\Controllers\EdukasiController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TamanController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +22,23 @@ use PhpParser\Builder\Function_;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index'] ); //routes home
 
-Route::get('/listtaman', function(){
-    return view('listtaman');
-});
 
-Route::get('/detailcafe', function(){
-    return view('detailcafe');
-});
+Route::get('/alamlist', [AlamController::class, 'alamlist']);
+Route::get('/alam/{id}', [AlamController::class, 'alam']);
 
-Route::get('/edukasi', function(){
-    return view('edukasi');
-});
+Route::get('/edukasi/{id}', [EdukasiController::class, 'edukasi']);
+Route::get('/edukasilist', [EdukasiController::class, 'edukasilist']);
 
-Route::get('/alam', function(){
-    return view('alam');
-});
+Route::get('/tamanlist', [TamanController::class, 'taman']);
+
+Route::get('/detailtaman/{id}', [TamanController::class, 'detailtaman']);
+
+Route::get('/angkringanlist', [AngkringanController::class, 'angkringan']);
+
+Route::get('/detailangkringan/{id}', [AngkringanController::class, 'showangkringan']);
+
+Route::get('/cafelist', [CafeController::class, 'cafe']);
+
+Route::get('/detailcafe/{id}', [CafeController::class, 'showdetail']);

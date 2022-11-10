@@ -1,4 +1,15 @@
 @extends('layouts.index')
+@section('search')
+     <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/alamlist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+@endsection
 
 @section('content')
       <!-- Caraousel slider -->
@@ -14,24 +25,27 @@
       </div>
       <div class="carousel-inner carousel-innerku">
         <div class="carousel-item carousel-itemku active">
-          <img src="assets/cok.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
+          <img src="assets/tawangmangu.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
           <div class="carousel-caption">
-            <h1>First slide label</h1>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h1>Wisata Alam</h1>
+            <p>Penasaran dengan kota wisata alam di solo? Yuk lihat!</p>
+            <a href="/alamlist" class="btn btn-primary-2">More Information</a>
           </div>
         </div>
         <div class="carousel-item carousel-itemku">
-          <img src="assets/cok.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
+          <img src="assets/tirtonadi.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
           <div class="carousel-caption">
-            <h1>Second slide label</h1>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h1>Wisata Edukasi</h1>
+            <p>Pengen tahu sejarah di Solo? bisa cek langsung!</p>
+            <a href="/edukasilist" class="btn btn-primary-2">More Information</a>
           </div>
         </div>
         <div class="carousel-item carousel-itemku">
-          <img src="assets/cok.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
+          <img src="assets/wedhangpendopo.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
           <div class="carousel-caption">
-            <h1>Third slide label</h1>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h1>Angkringan & Cafe</h1>
+            <p>Ingin ke tempat Estetik? Banyak kok.</p>
+            <a href="/cafelist" class="btn btn-primary-2">More Information</a>
           </div>
         </div>
       </div>
@@ -49,7 +63,7 @@
   </div>
 
   <!-- Ini bagian highlight -->
-  <div class="container des-high text-white min-vh-100">
+  {{-- <div class="container des-high text-white min-vh-100">
     <div class="row">
       <div class="col-12">
         <h2 class="des-jud">Destination Highlight</h2>
@@ -139,7 +153,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!-- end highlight -->
 
@@ -154,13 +168,13 @@
             <div id="carouselExampleControls" class="carousel-ku carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="assets/cok.jpg" class="d-block w-100 h-100" alt="assets/cok.jpg">
+                  <img src="assets/omahlondo.jpg" class="d-block w-100 h-100" alt="assets/cok.jpg">
                 </div>
                 <div class="carousel-item">
-                  <img src="assets/uhuy.jpg" class="d-block w-100 h-100" alt="">
+                  <img src="assets/wedhangpendopo.jpg" class="d-block w-100 h-100" alt="">
                 </div>
                 <div class="carousel-item">
-                  <img src="assets/cok.jpg" class="d-block w-100 h-100" alt="">
+                  <img src="assets/tirtonadi.jpg" class="d-block w-100 h-100" alt="">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -174,25 +188,16 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-            <div class="mb-sm-5">
-              <h3>Bandung Trade Mall</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero saepe qui deserunt obcaecati
-                necessitatibus, beatae, reprehenderit officia aperiam ut amet delectus nisi! Dignissimos
-                quasi commodi,
-                harum rem officia perspiciatis a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sint fugiat
-                aliquam, accusamus voluptas eligendi ex perspiciatis quod velit dicta dolore.
+            <div class="mb-sm-5 mt-4">
+              <h3>Cafe & Angkringan</h3>
+              <p class="all-text">Halo kalian penggemar tempat-tempat estetik dan juga menarik!!! khususnya buat kalian yang ada di kota Solo. Cuman diwebsite ini loh yang memberikan informasi secara lengkap. Ada berbagai macam tempat tongkrongan baik itu berbentuk Cafe sampai sekedar angkringan. Jangan salah mereka juga menjamin kualitas produk mereka kok, jadi kalian yang mau jalan-jalan ke Solo, yukk lihat semua lokasi menarik di Website ini, ajak juga teman kalian kesini yakkk!! 
               </p>
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-12 overflow-hidden">
-            <h3>Karanganyar Beach</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quod, enim nihil inventore fugit
-              voluptate
-              corporis facilis dolorem officiis libero ut adipisci? Repellat enim iste eaque,
-              exercitationem tempore
-              numquam ab!</p>
-            <img src="assets/test.png" style="max-width: 100%; " alt="">
+            <h3>Wisata Alam & Wisata Edukasi</h3>
+            <p class="all-text">Gak cuma sampe tongkrongan aja yang ada di website ini loh, kita juga punya beberapa wisata yang bisa jadi tempat kalian healing hihi. Kalian lebih tertarik wisata edukasi yang mengarah bahas sejarah atau lebih suka menikmati wisata alam seperti di pantai atau semacamnya nih? Jangan sampe ketinggalan update dari kami ya, cuma ada di website ini yang membahas wisata edukasi maupun alam yang juga menyediakan informasi detailll bangetttt.</p>
+              <img src="assets/tawangmangu.jpg" style="max-width: 100%; " alt="">
           </div>
         </div>
       </div>
@@ -204,31 +209,15 @@
   <!-- About -->
   <div class="container about text-white mt-2">
     <div class="row">
-      <div class="col-lg-8 col-sm-12 col-md-7 jud-about">
-        <h2>About</h2>
-        <p class="d-lg-flex"><img src="assets/test.png" class="img-about" alt="">Lorem
-          ipsum
-          dolor, sit amet consectetur adipisicing elit. Nihil molestiae, commodi sit, recusandae
-          doloremque
-          illum quo doloribus dolore incidunt esse officiis dolores impedit, consequatur minima nulla
-          perferendis ad
-          autem dignissimos quos alias saepe modi architecto inventore earum! Quasi aut ducimus commodi
-          reiciendis,
-          perspiciatis odit explicabo placeat tenetur distinctio dicta nisi in laborum natus sunt, vero
-          aliquid beatae
-          corporis expedita asperiores veritatis optio quaerat! Vitae officia itaque qui, nostrum eos beatae
-          deleniti
-          quasi dolor voluptatibus ab, conu
+      <div class="col-lg-7 col-sm-12 col-md-7 jud-about">
+        <h2>About Us</h2>
+        <p class="all-text ">
+         Selamat datang diwebsite yang menyediakan berbagai informasi mengenai destinasi menarik serta estetik di kota tercinta yaitu Solo. Kami merancang website ini untuk memenuhi kebutuhan kalian yang tinggal di sekitar solo bahkan bagi kalian yang berada diluar solo dan ingin berlibur ke kota ini. Mulai sekarang kalian dapat langsung mendapatkan informasi secara langsung serta juga 
         </p>
       </div>
-      <div class="news col-lg-4 col-sm-12 col-md-5">
+      <div class="news col-lg-5 col-sm-12 col-md-5">
         <h2 class="h-news">News</h2>
-        <p class="news-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi reprehenderit ipsam
-          aut
-          incidunt iusto
-          corrupti sit, asperiores nulla, et rem architecto repudiandae totam? Assumenda ipsa non esse maiores
-          expedita
-          consequatur.</p>
+        <p class="news-p all-text">Apa yang baru? Tenang aja walaupun website kami ini baru saja dibuat, kami tetap berusaha akan ada perbaikan maupun juga hal baru yang dapat memanjakan kalian. Jadi tetap selalu update yaa di website kami ini.</p>
       </div>
     </div>
     <div class="row">

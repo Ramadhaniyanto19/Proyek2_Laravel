@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
-  <title>SHT!</title>
+  <title>IWS || {{ $tittle }}</title>
 </head>
 
 <body>
@@ -29,39 +29,48 @@
       <div class="collapse navbar-collapse link-hover" id="navbarNavDropdown">
         <ul class="ms-auto navbar-nav j2">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link  {{ ($tittle === 'Home') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            <a class="nav-link dropdown-toggle {{ ($tittle === 'Wisata Alam' || $tittle === 'Wisata Edukasi') ? 'active' : '' }}" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Wisata
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="/alam">Alam</a></li>
-              <li><a class="dropdown-item" href="/edukasi">Edukasi</a></li>
+              <li><a class="dropdown-item {{ ($tittle === 'Wisata Alam') ? 'active' : '' }}" href="/alamlist">Alam</a></li>
+              <li><a class="dropdown-item {{ ($tittle === 'Wisata Edukasi') ? 'active' : '' }}" href="/edukasilist">Edukasi</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            <a class="nav-link dropdown-toggle {{ ($tittle === 'List Cafe' OR $tittle ==='List Angkringan' OR $tittle ==='List Taman') ? 'active' : '' }}" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Tongkrongan
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="/detailcafe">Cafe</a></li>
-              <li><a class="dropdown-item" href="/listtaman">Taman</a></li>
-              <li><a class="dropdown-item" href="/angkringan">Angkringan</a></li>
+              <li><a class="dropdown-item {{ ($tittle === 'List Cafe') ? 'active' : '' }}" href="/cafelist">Cafe</a></li>
+              <li><a class="dropdown-item {{ ($tittle === 'List Taman') ? 'active' : '' }}" href="/tamanlist">Taman</a></li>
+              <li><a class="dropdown-item {{ ($tittle === 'List Angkringan') ? 'active' : '' }}" href="/angkringanlist">Angkringan</a></li>
             </ul>
           </li>
+          <li class="nav-item d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <a class="nav-link" aria-current="page" href="/"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+          <li class="nav-item d-block d-lg-none d-sm-block d-md-block d-xl-none">
+            <a class="nav-link" aria-current="page" href="/">Logout<i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+
         </ul>
-        <div class="bungkus j3 mx-auto me-lg-2">
-          <form class="d-flex bt-search">
-            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search">
+        {{-- <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/angkringanlist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
             <img class="btn a-search" src="/assets/bt-search.png" alt="">
           </form>
         </div>
       </div>
     </div>
-  </nav>
+  </nav> --}}
+
+    @yield('search');
 
     @yield('content')
  

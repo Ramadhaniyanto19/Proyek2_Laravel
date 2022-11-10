@@ -6,8 +6,12 @@
             <!-- Kiri dropdown -->
             <div class="col-lg-3 col-md-3 d-sm-none d-lg-block d-md-none cafe-kiri">
                 <div class="btn-group d-flex flex-column">
-                    <button class="btn text-white" href="index.html">Home</button>
-                    <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuClickableInside"
+                    <a href="/alam" class="btn btn-primary-2 mt-4">Wisata Alam</a>
+                    <a href="/edukasi" class="btn btn-primary-2 mt-4">Wisata Edukasi</a>
+                    <a href="/tamanlist" class="btn btn-primary-2 mt-4">Taman</a>
+                    <a href="/angkringanlist" class="btn btn-primary-2 mt-4">Angkringan</a>
+                    <a href="/cafelist" class="btn btn-primary-2 mt-4">Kembali Ke Cafe List</a>
+                    {{-- <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuClickableInside"
                         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         Top 5 Best Cafe
                     </button>
@@ -17,7 +21,7 @@
                         <li><a class="dropdown-item" href="#">Menu item</a></li>
                         <li><a class="dropdown-item" href="#">Menu item</a></li>
                         <li><a class="dropdown-item" href="#">Menu item</a></li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
 
@@ -25,28 +29,23 @@
 
             <!-- Tengah  -->
             <div class="col-lg-6 col-md-12 col-12 col-sm-12">
+                @foreach ($detailcafe as $dc)
                 <div class="cafe-tengah">
-                    <img src="assets/test.png" class="gambar-tengah ms-1" alt="">
+                     <iframe class="maps-detailtaman col-12"
+                            src="{{ $dc->maps }}"width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5 class="nama-halaman">Tongkrongan <i class="fa-solid fa-arrow-right fa-2xs"></i> Cafe</h5>
                     <p class="horizontal-cafe"></p>
                     <div class="isi-cafe">
-                        <h4>Kulino Cafe</h4>
+                        <h4>{{ $dc->judul }}</h4>
                         <div class="row text-center">
-                            <div class="col-lg-6 col-md-5 col-sm-6 isi-gambar">
-                                <img src="assets/test.png" alt="">
-                            </div>
-                            <div class="col-lg-6 col-md-7 col-sm-6 isi-gambar-2">
-                                <img src="assets/kopi.jpg" alt="">
-                                <img src="assets/kopi.jpg" class="mt-1" alt="">
+                            <div class="col-lg-12 col-md-12 col-sm-12 isi-gambar">
+                                <img src="assets/{{ $dc->gambar }}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="deskripsi-cafe">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis facere id sapiente
-                            excepturi, qui a eveniet maiores aliquid quisquam veniam! Quibusdam ratione aliquid corrupti
-                            sequi eum asperiores molestias rerum. Nesciunt? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Illum inventore aliquid labore, quibusdam omnis nostrum doloremque eos
-                            consectetur iste praesentium!</p>
+                        <p>{{ $dc->deskripsi }}</p>
                     </div>
                     <div class="tengah-sm pt-2">
                         <h5>Place Information</h5>
@@ -62,9 +61,9 @@
                                 </div>
                                 <div class="col-11 information-sm">
                                     <ul>
-                                        <li>Jalan bandung raya no 3, kecamatan bandung, jawa barat indonesia</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>087754621313</li>
+                                        <li>{{ $dc->location }}</li>
+                                        <li>{{ $dc->jam }}</li>
+                                        <li>{{ $dc->nomor_hp }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,7 +76,9 @@
 
             <!-- Kanan -->
             <div class="col-lg-3 d-lg-block d-md-none d-sm-none cafe-kanan">
-                <img src="assets/kopi.jpg" class="gambar-kanan" alt="">
+                 <iframe class="maps-detailtaman col-12"
+                            src="{{ $dc->maps }}"width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div class="info-cafe pt-1">
                     <div class="row">
                         <div class="col-lg-1 d-flex flex-column">
@@ -89,10 +90,9 @@
                         </div>
                         <div class="col-lg-11">
                             <ul>
-                                <li>Lorem, ipsum dolor sit amet consectetur adipisicing
-                                    elit. Laboriosam, reiciendis Jawa barat indonesia.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>087754621313</li>
+                                <li>{{$dc->location}}</li>
+                                <li>{{ $dc->jam }}</li>
+                                <li>{{ $dc->nomor_hp }}</li>
                             </ul>
                         </div>
 
@@ -111,7 +111,10 @@
                         </div>
                         <div class="col-lg-11">
                             <ul>
-                                <a href="">
+                                <a href="/detailcafe/{id}">
+                                    <li> {{ ($dc->judul)  }}</li>
+                                </a>
+                                {{-- <a href="">
                                     <li>Bandung Trade mall</li>
                                 </a>
                                 <a href="">
@@ -119,17 +122,16 @@
                                 </a>
                                 <a href="">
                                     <li>Bandung Trade mall</li>
-                                </a>
-                                <a href="">
-                                    <li>Bandung Trade mall</li>
-                                </a>
+                                </a> --}}
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
+</div>
 
     <!-- End Kanan -->
 @endsection

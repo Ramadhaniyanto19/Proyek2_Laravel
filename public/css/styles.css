@@ -20,6 +20,11 @@ body {
     font-weight: 700;
 }
 
+.all-text {
+    text-align: justify;
+    font-weight: 300;
+}
+
 /* ==============HALAMAN INDEX/HOME =================  */
 /* Navbar */
 @media screen and (min-width: 1084px) {
@@ -169,9 +174,11 @@ nav {
 .a-more {
     display: block;
     position: absolute;
-    margin-top: 260px;
+    margin-top: 210px !important;
     text-decoration: none;
     margin-left: 100px;
+    background-color: #5aa094;
+    border-radius: 20px;
 }
 
 /* Responsive News Destination edu */
@@ -359,6 +366,7 @@ footer .bag-1 a {
 .img-tamanfav {
     width: 100%;
     max-height: 500px;
+    border-radius: 30px;
 }
 
 .bg-taman {
@@ -379,8 +387,11 @@ footer .bag-1 a {
     margin-top: 140px;
 }
 
-.img-taman > img {
+.img-taman {
     opacity: 0.55 !important;
+    height: 200px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .card {
@@ -392,7 +403,18 @@ footer .bag-1 a {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
+    .text-taman {
+        position: absolute;
+        margin-top: 150px;
+    }
+    .text-taman2 {
+        position: absolute;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (min-width: 1251px) and (max-width: 1400px) {
     .text-taman {
         position: absolute;
         margin-top: 150px;
@@ -419,25 +441,30 @@ footer .bag-1 a {
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .text-taman {
         position: absolute;
-        margin-top: 140px;
+        margin-top: 2300px;
         margin-left: 15px;
     }
     .text-taman2 {
         position: absolute;
-        margin-top: 60px;
+        margin-top: 90px;
         margin-left: 15px;
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 455px) {
+@media screen and (min-width: 400px) and (max-width: 575px) {
     .text-taman {
         position: absolute;
         margin-left: -220px;
     }
     .text-taman2 {
         position: absolute;
-        margin-top: 160px;
-        margin-left: -220px;
+        margin-top: 100px;
+        margin-left: -250px;
+    }
+
+    .img-taman {
+        min-width: 100% !important;
+        max-height: 100%;
     }
 }
 
@@ -449,21 +476,23 @@ footer .bag-1 a {
     }
     .text-taman2 {
         position: absolute;
-        margin-top: 250px;
+        margin-top: 100px;
         margin-left: 15px;
     }
 }
 
-@media screen and (min-width: 460px) and (max-width: 575px) {
-    .text-taman {
-        position: absolute;
-        margin-top: 200px;
-        margin-left: -300px;
-    }
+@media screen and (min-width: 250px) and (max-width: 399px) {
     .text-taman2 {
         position: absolute;
-        margin-top: 200px;
-        margin-left: -300px;
+        margin-top: 100px;
+    }
+    .img-taman {
+        min-width: 100% !important;
+        max-height: 100%;
+    }
+
+    .ff-taman {
+        font-size: 15px;
     }
 }
 /* End Taman */
@@ -477,7 +506,7 @@ footer .bag-1 a {
 
 .cafe-kiri {
     width: 220px;
-    height: 180px;
+    height: 350px;
     background-color: #394f79;
     margin-right: 20px;
     border-radius: 20px;
@@ -521,15 +550,9 @@ footer .bag-1 a {
 }
 
 .isi-gambar img {
-    max-width: 290px;
+    max-width: 100%;
     height: 270px;
     margin-left: 10px;
-}
-
-.isi-gambar-2 img {
-    max-width: 200px;
-    height: 125px;
-    margin-left: 20px;
 }
 
 .deskripsi-cafe,
@@ -565,6 +588,14 @@ footer .bag-1 a {
     font-size: 14px;
     font-family: "Bellota", sans-serif;
     font-weight: 700;
+}
+
+.info-cafe i:nth-child(2) {
+    margin-top: 10px;
+}
+
+.info-cafe ul li:nth-child(2) {
+    margin-top: -10px;
 }
 
 .info-cafe ul li:nth-child(3) {
@@ -866,6 +897,306 @@ footer .bag-1 a {
 
 /* ============= END HALAMAN EDUKASI =============== */
 
-/* ============= HALAMAN WISATA ALAM =============== */
+/* ============= HALAMAN CAFE LIST =============== */
+.cafe-list {
+    color: white;
+}
 
-/* ============= END HALAMAN WISATA ALAM =============== */
+.img-cafelist {
+    background-image: url("/assets/cok.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position-y: -80px;
+    background-attachment: fixed;
+    min-width: 100%;
+}
+
+.welcome-img > img {
+    margin-top: 20px;
+    max-width: 350px;
+    border-radius: 40px;
+}
+
+.welcome {
+    margin-left: 40px;
+    margin-top: 15px;
+    text-align: justify;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #42c3a7 !important;
+}
+
+.img-cafe {
+    opacity: 0.65;
+    width: 400px;
+    height: 200px;
+}
+
+.text-cafe {
+    position: absolute;
+    margin-top: 95px;
+}
+
+.text-cafe > a {
+    font-size: small;
+}
+
+/* Responsive Cafe list */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .welcome {
+        margin-left: 150px;
+        text-align: justify;
+    }
+
+    .welcome-img {
+        align-items: center;
+        align-content: center;
+        display: flex;
+    }
+
+    .text-cafe {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .welcome {
+        margin-left: 150px;
+        text-align: justify;
+    }
+
+    .welcome-img {
+        align-items: center;
+        align-content: center;
+        display: flex;
+    }
+
+    .text-cafe {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 575px) {
+    .img-cafe {
+        opacity: 0.65;
+        height: 100%;
+        max-width: 400px;
+    }
+
+    .text-cafe {
+        position: absolute;
+        margin-top: 190px;
+        margin-left: -190px;
+        text-align: left;
+    }
+}
+/*End Responsive Cafe list */
+
+/* ============= END CAFE LIST =============== */
+
+/*================== HALAMAN ANGKRINGAN LIST =============== */
+
+.img-angkringan {
+    background-image: url("/assets/angkringan.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position-y: -180px;
+    background-attachment: fixed;
+    min-width: 100%;
+}
+
+.border-bottom {
+    margin-top: 2px;
+    border-bottom: 2px solid #42c3a7 !important;
+}
+
+.card-img-top {
+    max-height: 250px !important;
+    width: 100% !important;
+}
+
+.list-angkringan {
+    display: flex;
+    justify-content: center;
+}
+
+.bg-dongker {
+    background-color: #394f79;
+}
+
+.card-body-angkringan {
+    text-align: justify;
+    margin: 10px 10px;
+}
+
+.angkringan-card {
+    border-radius: 20px;
+}
+
+/*================== END HALAMAN ANGKRINGAN LIST =============== */
+
+/* =========== HALAMAN DETAIL TAMAN =============*/
+.btn-primary {
+    background-color: #42c3a7 !important;
+    border-radius: 40px;
+}
+.btn-primary-2 {
+    background-color: #42c3a7 !important;
+    color: white;
+    font-weight: 700;
+    border-radius: 40px;
+}
+
+.detail-taman {
+    margin-top: 90px;
+    color: white !important;
+    text-align: justify;
+}
+
+.garis-bawah {
+    border-bottom: 2px solid #42c3a7;
+}
+
+.img-detail-taman {
+    max-width: 100%;
+    border-radius: 50px;
+}
+
+.gambar2-detail-taman {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.isi-detail-taman {
+    list-style: none;
+}
+
+.isi-detail-taman li {
+    margin-top: 20px;
+    font-family: "Bellota", sans-serif;
+    font-weight: 400;
+}
+
+.isi-detail-taman li:nth-child(3) {
+    margin-top: 35px;
+}
+
+.icon-detailtaman i {
+    padding-top: 25px;
+}
+
+.icon-detailtaman i:nth-child(1) {
+    margin-left: 5px;
+}
+
+.icon-detailtaman i:nth-child(2) {
+    margin-top: 22px;
+}
+
+/* Responsive Detail Taman */
+/* Informasi Taman */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .icon-detailtaman i:nth-child(2) {
+        margin-top: 45px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .icon-detailtaman i:nth-child(2) {
+        margin-top: 45px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .icon-detailtaman i:nth-child(2) {
+        margin-top: -4px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 575px) {
+    .icon-detailtaman i:nth-child(2) {
+        margin-top: -5px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 320px) {
+    .icon-detailtaman i:nth-child(2) {
+        margin-top: 45px;
+    }
+}
+/* End Responsive Informasi Taman */
+/* Responsive 2 gambar */
+@media screen and (max-width: 575px) {
+    .gambar2-detail-taman {
+        max-width: 100%;
+    }
+    .gambar-bawah-sm {
+        display: none;
+    }
+}
+/* End Responsive 2 gambar */
+/* End Responsive Detail Taman */
+
+/* ========== END HALAMAN DETAIL TAMAN =============*/
+
+/* =========== HALAMAN DETAIL ANGKRINGAN ============ */
+.imgtop-det-angkringan {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.galeri-det-angkringan img {
+    max-width: 90%;
+    margin-top: 10px;
+}
+
+.galeri-det-angkringan2 img {
+    max-width: 100%;
+    height: 384px;
+    margin-top: 8px;
+    border-radius: 20px;
+}
+
+.icon-detail-angkringan {
+    color: #42c3a7;
+    margin-top: 30px;
+}
+
+.icon-detail-angkringan i {
+    margin-top: 20px;
+}
+
+.icon-detail-angkringan i:nth-child(1) {
+    margin-left: 5px;
+}
+
+.list-detail-angkringan ul li {
+    color: white;
+    list-style: none;
+    margin-top: 45px;
+    margin-left: -25px;
+}
+
+.list-detail-angkringan ul li:nth-child(2) {
+    margin-top: 15px;
+}
+
+.list-detail-angkringan ul li:nth-child(3) {
+    margin-top: 30px;
+}
+
+.text-detail-angkringan {
+    color: white;
+    margin-left: 15px;
+    text-align: justify;
+    margin-top: 30px;
+}
+
+/* =========== END HALAMAN DETAIL ANGKRINGAN ============ */
+
+/* =========== HALAMAN TAMANLIST ============= */
+
+/* =========== END HALAMAN TAMANLIST ============= */

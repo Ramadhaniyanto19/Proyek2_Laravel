@@ -1,15 +1,29 @@
 @extends('layouts.index')
+@section('search')
+     <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/tamanlist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+@endsection
 @section('content')
     <div class="container detail-taman">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <h1 class="garis-bawah ff-taman">Detail Taman</h1>
-                 <iframe class="maps-detailtaman col-12"
-                            src="www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63267.545763471244!2d111.0979203254216!3d-7.659306069559116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e798a35a2ec2ab9%3A0x4027a76e3530300!2sKec.%20Tawangmangu%2C%20Kabupaten%20Karanganyar%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1663499156424!5m2!1sid!2sid"
-                            width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                @foreach($tamanku as $tm)
+                    
+                <iframe class="maps-detailtaman col-12"
+                src="{{ $tm->iframe }}"
+                width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                @endforeach
                 {{-- <img src="assets/test.png" class="img-detail-taman d-xl-block d-lg-block d-md-block d-sm-none d-none"
-                    alt=""> --}}
+                alt=""> --}}
                 <div class="row pt-4">
                     @foreach ($tamanku as $tm)
                     <div class="col-xl-8 col-lg-8 col-md-7 mt-3 mt-xl-0 mt-md-0 mt-lg-0 mt-sm-0 col-sm-12 col-12">

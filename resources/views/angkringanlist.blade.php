@@ -13,25 +13,25 @@
 @section('content')
      <div class="img-angkringan"></div>
     <div class="container">
-        <div class="row d-flex">
+        <div class="row">
             <div class="col-12">
                 <h2 class="mt-4 text-white">Angkringan List</h2>
                 <p class="border-bottom"></p>
             </div>
-            @foreach ($angkringan as $ak)
             <div class="row text-white">
+                @foreach ($angkringan as $ak)
                 <div class="list-angkringan col-lg-4 col-md-4 col-xl-4 col-sm-6 col-6">
                     <div class="card bg-dongker angkringan-card" style="height: 27rem; width: 18rem;">
                         <img src="assets/angkringan.jpg" class="card-img-top" alt="...">
                         <div class="card-body card-body-angkringan">
                             <h5 class="card-title">{{ $ak->judul }}</h5>
-                            <p class="card-text">{{ Str::limit($ak->deksripsi , 80, 'Baca Selengkapnya...') }}</p>
+                            <p class="card-text text-white">{{ Str::limit($ak->deskripsi , 80, ' Baca Selengkapnya...') }}</p>
                             <a href="/detailangkringan/{{ $ak->id }}" class="btn btn-primary float-end me-1">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
 

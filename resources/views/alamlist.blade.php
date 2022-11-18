@@ -20,10 +20,10 @@
                         @foreach ($alamlist as $al)
                         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="card d-flex">
-                                <img src="assets/{{ $al->gambar }}" class="img-taman" alt="...">
-                                <div class="text-taman2 text-white ms-lg-2">
-                                    <h2 class="ff-taman">{{ $al->judul }}</h2>
-                                    <a href="/alam/{id}" class=" ff-taman text-white btn btn-bg ">More <img
+                                <img src="assets/{{ $al->gambar }}" class="img-alamlist" alt="...">
+                                <div class="text-alamlist text-white ms-lg-2">
+                                    <h2 class="ff-taman txt-list">{{ $al->judul }}</h2>
+                                    <a href="/alam/{{ $al->id }}" class="txt-list ff-taman text-white btn btn-bg ">More <img
                                             src="assets/panah.png" alt="">
                                     </a>
                                 </div>

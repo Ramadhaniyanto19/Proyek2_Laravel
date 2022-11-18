@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Cafe extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
 }

@@ -1,4 +1,15 @@
 @extends('layouts.index')
+@section('search')
+     <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/angkringanlist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+@endsection
 @section('content')
     <div class="container detail-taman">
         <div class="row">
@@ -16,7 +27,7 @@
                         <h3 class="garis-bawah ff-taman">{{ $ak->judul }}</h3>
                         <div class="row text-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2">
-                                <img src="assets/{{ $ak->gambar }}" class="gambar2-detail-taman" alt="">
+                                <img src="/assets/{{ $ak->gambar }}" class="align-content-center align- gambar2-detail-taman" alt="">
                             </div>
                             {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
                                 <img src="assets/kopi.jpg" class="gambar2-detail-taman gambar-bawah-sm" alt="">

@@ -1,15 +1,14 @@
 <?php
 
-use Illuminate\Routing\Router;
-use PhpParser\Builder\Function_;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlamController;
-use App\Http\Controllers\AngkringanController;
 use App\Http\Controllers\CafeController;
-use App\Http\Controllers\EdukasiController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TamanController;
-use Illuminate\Routing\Route as RoutingRoute;
+use App\Http\Controllers\EdukasiController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AngkringanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,23 +21,30 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
 
+
 Route::get('/', [HomeController::class, 'index'] ); //routes home
 
+Route::get('/alamlist', [AlamController::class, 'alamlist'])->middleware('auth');
+Route::get('/alam/{id}', [AlamController::class, 'alam'])->middleware('auth');
 
-Route::get('/alamlist', [AlamController::class, 'alamlist']);
-Route::get('/alam/{id}', [AlamController::class, 'alam']);
+Route::get('/edukasi/{id}', [EdukasiController::class, 'edukasi'])->middleware('auth');
+Route::get('/edukasilist', [EdukasiController::class, 'edukasilist'])->middleware('auth');
 
-Route::get('/edukasi/{id}', [EdukasiController::class, 'edukasi']);
-Route::get('/edukasilist', [EdukasiController::class, 'edukasilist']);
+Route::get('/tamanlist', [TamanController::class, 'taman'])->middleware('auth');
+Route::get('/detailtaman/{id}', [TamanController::class, 'detailtaman'])->middleware('auth');
 
-Route::get('/tamanlist', [TamanController::class, 'taman']);
+Route::get('/angkringanlist', [AngkringanController::class, 'angkringan'])->middleware('auth');
+Route::get('/detailangkringan/{id}', [AngkringanController::class, 'showangkringan'])->middleware('auth');
 
-Route::get('/detailtaman/{id}', [TamanController::class, 'detailtaman']);
+Route::get('/cafelist', [CafeController::class, 'cafe'])->middleware('auth');
+Route::get('/detailcafe/{id}', [CafeController::class, 'showdetail'])->middleware('auth');
 
-Route::get('/angkringanlist', [AngkringanController::class, 'angkringan']);
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/detailangkringan/{id}', [AngkringanController::class, 'showangkringan']);
 
-Route::get('/cafelist', [CafeController::class, 'cafe']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']); //input data ke database
 
-Route::get('/detailcafe/{id}', [CafeController::class, 'showdetail']);
+

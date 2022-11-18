@@ -27,7 +27,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse link-hover" id="navbarNavDropdown">
-        <ul class="ms-auto navbar-nav j2">
+        {{-- <ul class="ms-auto navbar-nav j2">
           <li class="nav-item">
             <a class="nav-link  {{ ($tittle === 'Home') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
@@ -52,54 +52,23 @@
               <li><a class="dropdown-item {{ ($tittle === 'List Angkringan') ? 'active' : '' }}" href="/angkringanlist">Angkringan</a></li>
             </ul>
           </li>
-          @auth
-        <li class="nav-item dropdown d-xl-block d-lg-block d-none">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome back, {{ Auth()->user()->name }}
-          </a>
-        
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              @can('admin')
-              <li><a class="dropdown-item" href="#">Dashboard</a></li>
-              <li><hr class="dropdown-divider"></li>
-          @endcan
-            <li>
-              <form action="/logout" method="post">
-                @csrf
-                <button class="dropdown-item" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
-              </form>
-              {{-- <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a> --}}
-            </li>
-          </ul>
-               <li class="nav-item d-block d-lg-none d-sm-block d-md-block d-xl-none">
-                {{-- <a class="nav-link" aria-current="page" href="/login"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a> --}}
-                  <form action="/logout" method="post">
-                    @csrf
-                    <button class="nav-link" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
-                  </form>
-              </li>
-        </li>
-              @else
-              <li class="nav-item d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
-              </li>
-              <li class="nav-item d-block d-lg-none d-sm-block d-md-block d-xl-none">
-                <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
-              </li>
-          @endauth
-
-        </ul>
+          <li class="nav-item d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
+          </li>
+          <li class="nav-item d-block d-lg-none d-sm-block d-md-block d-xl-none">
+            <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
+          </li>
+        </ul> --}}
         {{-- <div class="bungkus j3 mx-auto me-lg-2">
           <form action="/angkringanlist"  class="d-flex bt-search">
             <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
             <img class="btn a-search" src="/assets/bt-search.png" alt="">
           </form>
-        </div>
+        </div> --}}
       </div>
     </div>
-  </nav> --}}
+  </nav>
 
-    @yield('search');
 
     @yield('content')
  

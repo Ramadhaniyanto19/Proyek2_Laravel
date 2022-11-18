@@ -382,14 +382,14 @@ footer .bag-1 a {
     position: absolute;
     margin-top: 200px;
 }
-.text-taman2 {
+/* .text-taman2 {
     position: absolute;
     margin-top: 140px;
-}
+} */
 
-.img-taman {
+.img-taman > img {
     opacity: 0.55 !important;
-    height: 200px;
+    height: 300px;
     max-height: 100%;
     max-width: 100%;
 }
@@ -403,16 +403,17 @@ footer .bag-1 a {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 1250px) {
+/* @media screen (min-width: 993px) and (max-width: 1250px) {
     .text-taman {
         position: absolute;
-        margin-top: 150px;
+        margin-top: 200px;
     }
+
     .text-taman2 {
         position: absolute;
         margin-top: 100px;
     }
-}
+} */
 
 @media screen and (min-width: 1251px) and (max-width: 1400px) {
     .text-taman {
@@ -441,7 +442,7 @@ footer .bag-1 a {
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .text-taman {
         position: absolute;
-        margin-top: 2300px;
+        margin-top: 200px;
         margin-left: 15px;
     }
     .text-taman2 {
@@ -978,7 +979,7 @@ footer .bag-1 a {
     }
 }
 
-@media screen and (min-width: 200px) and (max-width: 575px) {
+/* @media screen and (min-width: 315px) and (max-width: 575px) {
     .img-cafe {
         opacity: 0.65;
         height: 100%;
@@ -987,11 +988,11 @@ footer .bag-1 a {
 
     .text-cafe {
         position: absolute;
-        margin-top: 190px;
-        margin-left: -190px;
+        margin-top: 120px;
+        margin-left: -250px;
         text-align: left;
     }
-}
+} */
 /*End Responsive Cafe list */
 
 /* ============= END CAFE LIST =============== */
@@ -1197,6 +1198,143 @@ footer .bag-1 a {
 
 /* =========== END HALAMAN DETAIL ANGKRINGAN ============ */
 
-/* =========== HALAMAN TAMANLIST ============= */
+/* ===========H Halaman Login =========== */
+.form-signin {
+    width: 100%;
+    padding: 15px;
+    margin: auto;
+}
 
-/* =========== END HALAMAN TAMANLIST ============= */
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* ===========H end Halaman Login =========== */
+
+/* ======== Halaman Register ========== */
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1;
+}
+/* ======== End Halaman Register ========== */
+
+/* ============= Halaman Alam List ============ */
+.img-alamlist {
+    max-height: 280px;
+    opacity: 0.7;
+    min-width: 100%;
+}
+
+.text-alamlist {
+    position: absolute;
+    margin-top: 155px;
+}
+
+.txt-list {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.text-alamlist > a {
+    font-size: 20px;
+}
+
+.alam-img > img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: 450px;
+    border-radius: 30px;
+}
+
+.sejarah-alam,
+.deskripsi-alam,
+.sejarah-edukasi,
+.deskripsi-edukasi {
+    text-align: justify;
+    font-weight: 200;
+}
+
+/* ============= End Halaman Alam List ============ */
+
+/* =========== Halaman Edukasi List ========= */
+.img-edukasilist {
+    max-height: 280px;
+    opacity: 0.7;
+    min-width: 100%;
+}
+
+.text-edulist {
+    position: absolute;
+    margin-top: 180px;
+}
+
+.txt-edulist {
+    font-size: 19px;
+}
+
+.text-edulist > a {
+    font-size: 15px;
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .text-edulist {
+        position: absolute;
+        margin-top: 130px;
+        margin-left: 10px;
+    }
+
+    .txt-edulist {
+        font-size: 19px;
+    }
+
+    .text-edulist > a {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .text-edulist {
+        position: absolute;
+        margin-top: 90px;
+        margin-left: 10px;
+    }
+
+    .txt-edulist {
+        font-size: 19px;
+    }
+
+    .text-edulist > a {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 315px) and (max-width: 767px) {
+    .text-edulist {
+        position: absolute;
+        margin-top: 180px;
+        margin-left: 10px;
+    }
+
+    .txt-edulist {
+        font-size: 25px;
+    }
+
+    .text-edulist > a {
+        font-size: 15px;
+    }
+}
+
+/* =========== End Halaman Edukasi List ========= */

@@ -1,5 +1,15 @@
 @extends('layouts.index')
-
+@section('search')
+     <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/cafelist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+@endsection
 @section('content')
         <div class="container cafe">
         <div class="row">
@@ -32,7 +42,7 @@
                 @foreach ($detailcafe as $dc)
                 <div class="cafe-tengah">
                      <iframe class="maps-detailtaman col-12"
-                            src="{{ $dc->maps }}"width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            src="{{ $dc->iframe }}"width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5 class="nama-halaman">Tongkrongan <i class="fa-solid fa-arrow-right fa-2xs"></i> Cafe</h5>
                     <p class="horizontal-cafe"></p>
@@ -89,9 +99,9 @@
                             </div>
                         </div>
                         <div class="col-lg-11">
-                            <ul>
+                            <ul class="li-tulisan-cafe">
                                 <li>{{$dc->location}}</li>
-                                <li>{{ $dc->jam }}</li>
+                                <li class="pt-4">{{ $dc->jam }}</li>
                                 <li>{{ $dc->nomor_hp }}</li>
                             </ul>
                         </div>
@@ -111,7 +121,7 @@
                         </div>
                         <div class="col-lg-11">
                             <ul>
-                                <a href="/detailcafe/{id}">
+                                <a href="/detailcafe/{{ $dc->id }}}">
                                     <li> {{ ($dc->judul)  }}</li>
                                 </a>
                                 {{-- <a href="">

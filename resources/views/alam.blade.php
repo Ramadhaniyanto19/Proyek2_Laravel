@@ -1,15 +1,32 @@
 @extends('layouts.index')
-@section('content')
-        <!-- Image atas -->
-    <div class="gambar">
+@section('search')
+     <div class="bungkus j3 mx-auto me-lg-2">
+          <form action="/tamanlist"  class="d-flex bt-search">
+            <input class="ip-search form-control" type="search" placeholder="Jembatan Cincin" aria-label="Search" name="search" value="{{ request('search') }}">
+            <img class="btn a-search" src="/assets/bt-search.png" alt="">
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="container">
-        <div class="row">
+  </nav>
+@endsection
+@section('content')
+        <div class=" container pt-5 mt-3">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    @foreach($detailalam as $da) 
+                    <h1 class="garis-bawah text-white ff-taman">Detail Wisata Alam {{ $da->judul }}</h1>
+                    <iframe class="maps-detailtaman col-12"
+                    src="{{ $da->iframe }}"
+                    width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    @endforeach
+                </div>
+            </div>
             <div class="col-12">
                 <p class="p-img">Wisata Alam</p>
             </div>
         </div>
-    </div>
     <!-- End Image -->
 
     <!-- Wisata Alam Bag 2 -->
@@ -18,14 +35,14 @@
             @foreach ($detailalam as $da)
             <div class="col-lg-7">
                 <h2>{{ $da->judul }}</h2>
-                <div class="main-img">
-                    <img src="{{ $da->gambar }}" style="max-width:100%;" alt="">
+                <div class="alam-img">
+                    <img src="/assets/{{ $da->gambar }}" style="max-width:100%;" alt="">
                 </div>
-                <p>{{ $da->deskripsi }}</p>
+                <p class="deskripsi-alam">{{ $da->deskripsi }}</p>
             </div>
             <div class="col-lg-5">
                 <h2>Sejarah {{ $da->judul }}</h2>
-                <p>{{ $da->sejarah }}</p>
+                <p class="sejarah-alam">{{ $da->sejarah }}</p>
                 <iframe
                     src="{{ $da->iframe }}"
                     style="border:0; max-width: 480px; width: 370px; height: 50vh;" class="d-flex mx-auto"
@@ -51,12 +68,16 @@
                                 <li>{{ $da->nomor_hp }}</li>
                             </ul>
                         </div>
+                        <a href="/angkringanlist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
+                                Kembali ke list
+                                Angkringan</a>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
+    
     <!-- End wisata Edukasi Bag 2 -->
 
     

@@ -35,7 +35,7 @@
                     <img src="assets/{{ $ca->gambar }}" class="img-cafe" alt="...">
                     <div class="text-cafe text-white ms-lg-2">
                         <h4>{{ $ca->judul }}</h4>
-                        <a href="/detailcafe/{id}" class="text-white btn btn-bg ">More <img src="assets/panah.png" alt="">
+                        <a href="/detailcafe/{{ $ca->id }}" class="text-white btn btn-bg ">More <img src="assets/panah.png" alt="">
                         </a>
                     </div>
                 </div>

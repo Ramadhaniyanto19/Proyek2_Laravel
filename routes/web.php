@@ -8,7 +8,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TamanController;
 use App\Http\Controllers\EdukasiController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AngkringanController;
+use App\Http\Controllers\DashboardAlamController;
+use App\Http\Controllers\DashboardEdukasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +51,9 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']); //input data ke database
 
 
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
+Route::resource('/dashboardAlam', DashboardAlamController::class)->middleware('admin');
+Route::resource('/dashboardEdukasi', DashboardEdukasiController::class)->middleware('admin');
+Route::resource('/dashboardCafe', DashboardEdukasiController::class)->middleware('admin');
+// End Dashboard

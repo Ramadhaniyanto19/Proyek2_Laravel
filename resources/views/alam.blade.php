@@ -16,6 +16,16 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     @foreach($detailalam as $da) 
                     <h1 class="garis-bawah text-white ff-taman">Detail Wisata Alam {{ $da->judul }}</h1>
+                    @can('admin')
+                    <a class="btn mb-2 mt-2  btn-success" href="/dashboardAlam"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
+                    <a class="btn  mb-2 mt-2 btn-warning" href="/dashboardAlam/{{ $da->id }}/edit"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
+                    <form action="/dashboardAlam/{{ $da->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+                     @method('delete')
+                     @csrf
+                    <button class=" btn btn-danger"><i class="fa-solid text-dark fa-trash"></i> Hapus Postingan</button>
+                    </form>
+                    {{-- <a class="btn mb-2 btn-danger" href="/dashboardAlam/{{ $da->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a> --}}
+                    @endcan
                     <iframe class="maps-detailtaman col-12"
                     src="{{ $da->iframe }}"
                     width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -36,7 +46,8 @@
             <div class="col-lg-7">
                 <h2>{{ $da->judul }}</h2>
                 <div class="alam-img">
-                    <img src="/assets/{{ $da->gambar }}" style="max-width:100%;" alt="">
+                    {{-- <img src="/assets/{{ $da->gambar }}" style="max-width:100%;" alt=""> --}}
+                    <img src="{{ asset('storage/' . $da->gambar) }}" style="max-width:100%;" alt="">
                 </div>
                 <p class="deskripsi-alam">{{ $da->deskripsi }}</p>
             </div>
@@ -70,7 +81,7 @@
                         </div>
                         <a href="/angkringanlist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
                                 Kembali ke list
-                                Angkringan</a>
+                                Alam</a>
                     </div>
                 </div>
             </div>

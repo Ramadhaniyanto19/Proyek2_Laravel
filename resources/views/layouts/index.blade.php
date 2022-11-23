@@ -55,12 +55,12 @@
           @auth
         <li class="nav-item dropdown d-xl-block d-lg-block d-none">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome back, {{ Auth()->user()->name }}
+            Welcome back, {{ Auth()->user()->username }}
           </a>
         
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               @can('admin')
-              <li><a class="dropdown-item" href="#">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
           @endcan
             <li>

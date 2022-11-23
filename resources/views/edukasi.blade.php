@@ -17,6 +17,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     @foreach($detailedukasi as $de) 
                     <h1 class="garis-bawah text-white ff-taman">Detail Wisata Alam {{ $de->judul }}</h1>
+                    @can('admin')
+                    <a class="btn mb-2 btn-success" href="/dashboardEdukasi"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
+                    <a class="btn mb-2 btn-warning" href="/edit/{{ $de->id }}"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
+                    <a class="btn mb-2 btn-danger" href="/delete/{{ $de->id }}"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a>
+                    @endcan
                     <iframe class="maps-detailtaman col-12"
                     src="{{ $de->iframe }}"
                     width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -69,9 +74,9 @@
                                 <li>{{ $de->nomor_hp }}</li>
                             </ul>
                         </div>
-                        <a href="/angkringanlist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
+                        <a href="/edukasilist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
                     Kembali ke list
-                    Angkringan</a>
+                    Edukasi</a>
                     </div>
                 </div>
             </div>

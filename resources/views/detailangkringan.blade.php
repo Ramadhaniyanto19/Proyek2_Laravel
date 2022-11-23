@@ -25,8 +25,8 @@
                 <div class="row pt-4">
                     <div class="col-xl-8 col-lg-8 col-md-7 mt-3 mt-xl-0 mt-md-0 mt-lg-0 mt-sm-0 col-sm-12 col-12">
                         <h3 class="garis-bawah ff-taman">{{ $ak->judul }}</h3>
-                        <div class="row text-center">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2 justify-content-center">
                                 <img src="/assets/{{ $ak->gambar }}" class="align-content-center align- gambar2-detail-taman" alt="">
                             </div>
                             {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
@@ -59,7 +59,7 @@
                     </div>
                     @endforeach
                 </div>
-                <a href="/tamanlist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
+                <a href="/angkringanlist" class="btn btn-primary mt-3 ff-taman"> <i class="fa-solid fa-arrow-left"></i>
                     Kembali ke list
                     Angkringan</a>
             </div>

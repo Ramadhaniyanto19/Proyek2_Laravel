@@ -6,7 +6,7 @@
       </div>
           <div class="row">
         <div class="table-responsive">
-          <a href="/dashboardCafe/create" class="btn btn-success">Create Data</a>
+          <a href="/dashboardAngkringan/create" class="btn btn-success">Create Data</a>
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
@@ -18,16 +18,16 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($cafe as $ce)
+                @foreach ($angkringan as $ak)
                 <tr>
                   <td class="col-lg-1 text-center">{{ $loop->iteration }}</td>
-                  <td class="col-lg-2">{{ $ce->judul }}</td>
-                  <td class="col-lg-4">{{ Str::limit($ce->deskripsi, 150, '.......Lihat lebih lengkapnya di preview')}}</td>
-                  <td class="col-lg-3"><img src="{{ asset('storage/' . $ce->gambar )}}" width="250" height="200" alt=""></td>
+                  <td class="col-lg-2">{{ $ak->judul }}</td>
+                  <td class="col-lg-4">{{ Str::limit($ak->deskripsi, 150, '.......Lihat lebih lengkapnya di preview')}}</td>
+                  <td class="col-lg-3"><img src="{{ asset('storage/' . $ak->gambar )}}" width="250" height="200" alt=""></td>
                   <td class="col-lg-2">
-                    <a href="/detailcafe/{{ $ce->id }}"><i class="fa-solid text-dark fa-eye"></i></a>
-                    <a href="/dashboardCafe/{{ $ce->id }}/edit"><i class="fa-solid text-dark fa-edit"></i></a>
-                    <form action="/dashboardCafe/{{ $ce->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+                    <a href="/detailangkringan/{{ $ak->id }}"><i class="fa-solid text-dark fa-eye"></i></a>
+                    <a href="/dashboardAngkringan/{{ $ak->id }}/edit"><i class="fa-solid text-dark fa-edit"></i></a>
+                    <form action="/dashboardAngkringan/{{ $ak->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
                      @method('delete')
                      @csrf
                     <button class="border-0"><i class="fa-solid text-dark fa-trash"></i></button>

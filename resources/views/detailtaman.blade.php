@@ -30,7 +30,7 @@
                         <h3 class="garis-bawah ff-taman">{{ $tm->judul }}</h3>
                         <div class="row text-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2">
-                                <img src="assets/{{ $tm->gambar }}" class="gambar2-detail-taman" alt="">
+                                <img src="{{ asset('storage/' . $tm->gambar) }}" class="gambar2-detail-taman" alt="">
                             </div>
                             {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
                                 <img src="assets/kopi.jpg" class="gambar2-detail-taman gambar-bawah-sm" alt="">

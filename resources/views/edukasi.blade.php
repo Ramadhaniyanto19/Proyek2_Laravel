@@ -18,9 +18,14 @@
                     @foreach($detailedukasi as $de) 
                     <h1 class="garis-bawah text-white ff-taman">Detail Wisata Alam {{ $de->judul }}</h1>
                     @can('admin')
-                    <a class="btn mb-2 btn-success" href="/dashboardEdukasi"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
-                    <a class="btn mb-2 btn-warning" href="/edit/{{ $de->id }}"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
-                    <a class="btn mb-2 btn-danger" href="/delete/{{ $de->id }}"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a>
+                    <a class="btn mt-2 mb-2 btn-success" href="/dashboardEdukasi"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
+                    <a class="btn mt-2 mb-2 btn-warning" href="/dashboardEdukasi{{ $de->id }}/edit"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
+                    <form action="/dashboardEdukasi/{{ $de->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+                     @method('delete')
+                     @csrf
+                    <button class=" btn btn-danger"><i class="fa-solid text-dark fa-trash"></i> Hapus Postingan</button>
+                    </form>
+                    {{-- <a class="btn mb-2 btn-danger" href="/dashboardAlam/{{ $da->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a> --}}
                     @endcan
                     <iframe class="maps-detailtaman col-12"
                     src="{{ $de->iframe }}"

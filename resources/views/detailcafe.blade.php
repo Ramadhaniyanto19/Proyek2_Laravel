@@ -46,11 +46,20 @@
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5 class="nama-halaman">Tongkrongan <i class="fa-solid fa-arrow-right fa-2xs"></i> Cafe</h5>
                     <p class="horizontal-cafe"></p>
+                     @can('admin')
+                    <a class="btn mb-2 btn-success" href="/dashboardCafe"><i class="fa-solid  fa-dashboard"></i> Kembali ke Dashboard</a>
+                    <a class="btn mb-2 btn-warning" href="/dashboardCafe/{{ $dc->id }}/edit"><i class="fa-solid  fa-edit"></i> Edit Postingan</a>
+                    <form action="/dashboardCafe/{{ $dc->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+                     @method('delete')
+                     @csrf
+                    <button class=" btn btn-danger"><i class="fa-solid text-dark fa-trash"></i> Hapus Postingan</button>
+                    </form>
+                    @endcan
                     <div class="isi-cafe">
                         <h4>{{ $dc->judul }}</h4>
                         <div class="row text-center">
                             <div class="col-lg-12 col-md-12 col-sm-12 isi-gambar">
-                                <img src="assets/{{ $dc->gambar }}" alt="">
+                                <img src="{{ asset('storage/' . $dc->gambar)  }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -108,40 +117,11 @@
 
                     </div>
                 </div>
-                <div class="rekomendasi-cafe">
-                    <div class="row">
-                        <h5>Rekomendasi Tempat</h5>
-                        <div class="col-lg-1 d-flex flex-column">
-                            <div class="icon-rekomendasi">
-                                <i class="fa-sharp fa-solid fa-plane fa-1x pt-2"></i>
-                                <i class="fa-sharp fa-solid fa-plane fa-1x pt-2"></i>
-                                <i class="fa-sharp fa-solid fa-plane fa-1x pt-2"></i>
-                                <i class="fa-sharp fa-solid fa-plane fa-1x pt-2"></i>
-                            </div>
-                        </div>
-                        <div class="col-lg-11">
-                            <ul>
-                                <a href="/detailcafe/{{ $dc->id }}}">
-                                    <li> {{ ($dc->judul)  }}</li>
-                                </a>
-                                {{-- <a href="">
-                                    <li>Bandung Trade mall</li>
-                                </a>
-                                <a href="">
-                                    <li>Bandung Trade mall</li>
-                                </a>
-                                <a href="">
-                                    <li>Bandung Trade mall</li>
-                                </a> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
-            @endforeach
+        </div>
+        @endforeach
         </div>
     </div>
-</div>
 
     <!-- End Kanan -->
 @endsection

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alam;
-use App\Models\Edukasi;
+use App\Models\Cafe;
+use App\Models\Angkringan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardEdukasiController extends Controller
+class DashboardAngkringanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,8 @@ class DashboardEdukasiController extends Controller
      */
     public function index()
     {
-        return view ('dashboard.edukasi.dashboardEdukasi',[
-            "tittle" => "Daftar Edukasi",
-            "edukasi" => Edukasi::all()
+        return view('dashboard.angkringan.dashboardAngkringan', [
+            'angkringan' => Angkringan::get()
         ]);
     }
 
@@ -30,9 +29,7 @@ class DashboardEdukasiController extends Controller
      */
     public function create()
     {
-        return view('dashboard.edukasi.create',[
-            "tittle" => "Create Edukasi"
-        ]);
+        return view('dashboard.angkringan.create');
     }
 
     /**
@@ -43,17 +40,13 @@ class DashboardEdukasiController extends Controller
      */
     public function store(Request $request)
     {
-           $validatedata = Request()->validate([
+         $validatedata = Request()->validate([
             'judul' => 'required|max:25',
             'deskripsi' => 'required|min:300|max:1000',
-            'sejarah' => 'required|min:300|max:2300',
-            'location' => 'required',
             'gambar' => 'required|image|file|max:5000',
+            'location' => 'required',
             'jam' => 'required',
             'nomor_hp' => 'required',
-            'ig' => 'required',
-            'twt' => 'required',
-            'fb' => 'required',
             'maps' => 'required',
             'iframe' => 'required',
         ]);
@@ -62,37 +55,36 @@ class DashboardEdukasiController extends Controller
         //     $validatedata['gambar'] = $request->image('gambar')->store('gambar');
         // }
         if($request->file('gambar')){
-            $validatedata['gambar'] = $request->file('gambar')->store('gambar-edukasi');
+            $validatedata['gambar'] = $request->file('gambar')->store('gambar-angkringan');
         }
 
         $validatedata['deskripsi']= strip_tags($request->deskripsi);
-        $validatedata['sejarah']= strip_tags($request->sejarah);
-        Edukasi::create($validatedata);
+        Angkringan::create($validatedata);
 
-        return redirect('/dashboardEdukasi')->with('success', 'Data berhasil ditambahkan!');
+        return redirect('/dashboardAngkringan')->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Edukasi  $edukasi
+     * @param  \App\Models\Angkringan  $angkringan
      * @return \Illuminate\Http\Response
      */
-    public function show(Edukasi $edukasi)
+    public function show(Angkringan $angkringan)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Edukasi  $edukasi
+     * @param  \App\Models\Angkringan  $angkringan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Edukasi $dashboardEdukasi)
+    public function edit(Angkringan $dashboardAngkringan)
     {
-        return view('dashboard.edukasi.edit', [
-            'edukasi' => $dashboardEdukasi
+        return view('dashboard.angkringan.edit', [
+            'angkringan'=>$dashboardAngkringan
         ]);
     }
 
@@ -100,21 +92,18 @@ class DashboardEdukasiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Edukasi  $edukasi
+     * @param  \App\Models\Angkringan  $angkringan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Edukasi $edukasi)
+    public function update(Request $request, Angkringan $angkringan)
     {
-            $validatedata = Request()->validate([
+         $validatedata = Request()->validate([
             'judul' => 'required|max:25',
             'deskripsi' => 'required|min:300|max:700',
-            'sejarah' => 'required|min:300|max:1000',
-            'location' => 'required',
             'gambar' => 'image|file|max:5000',
+            'location' => 'required',
             'jam' => 'required',
             'nomor_hp' => 'required',
-            'ig' => 'required',
-            'twt' => 'required',
             'fb' => 'required',
             'maps' => 'required',
             'iframe' => 'required',
@@ -124,28 +113,26 @@ class DashboardEdukasiController extends Controller
             if($request->oldGambar){
                 Storage::delete($request->oldGambar);
             }
-            $validatedata['gambar'] = $request->file('gambar')->store('gambar-edukasi');
+            $validatedata['gambar'] = $request->file('gambar')->store('gambar-angkringan');
             }
 
         $validatedata['deskripsi']= strip_tags($request->deskripsi);
-        $validatedata['sejarah']= strip_tags($request->sejarah);
-        Edukasi::where('id', $id)->update($validatedata);
-        return redirect('/dashboardEdukasi')->with('success', 'Data berhasil diupdate!');
-
+        Cafe::where('id', $id)->update($validatedata);
+        return redirect('/dashboardAngkringan')->with('success', 'Data berhasil diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Edukasi  $edukasi
+     * @param  \App\Models\Angkringan  $angkringan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Edukasi $dashboardEdukasi)
+    public function destroy(Angkringan $dashboardAngkringan)
     {
-        if($dashboardEdukasi){
-            Storage::delete($dashboardEdukasi->gambar);
+        if($dashboardAngkringan){
+            Storage::delete($dashboardAngkringan->gambar);
         }
-        Edukasi::destroy($dashboardEdukasi->id);
-        return redirect('/dashboardEdukasi')->with('success', 'Data berhasil dihapus!');
+        Angkringan::destroy($dashboardAngkringan->id);
+        return redirect('/dashboardAngkringan')->with('success', 'Data berhasil dihapus!');
     }
 }

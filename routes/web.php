@@ -11,7 +11,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AngkringanController;
 use App\Http\Controllers\DashboardAlamController;
+use App\Http\Controllers\DashboardCafeController;
+use App\Http\Controllers\DashboardTamanController;
 use App\Http\Controllers\DashboardEdukasiController;
+use App\Http\Controllers\DashboardAngkringanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,5 +58,7 @@ Route::post('/register', [RegisterController::class, 'store']); //input data ke 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('admin');
 Route::resource('/dashboardAlam', DashboardAlamController::class)->middleware('admin');
 Route::resource('/dashboardEdukasi', DashboardEdukasiController::class)->middleware('admin');
-Route::resource('/dashboardCafe', DashboardEdukasiController::class)->middleware('admin');
+Route::resource('/dashboardCafe', DashboardCafeController::class)->middleware('admin');
+Route::resource('/dashboardTaman', DashboardTamanController::class)->middleware('admin');
+Route::resource('/dashboardAngkringan', DashboardAngkringanController::class)->middleware('admin');
 // End Dashboard

@@ -20,6 +20,16 @@
                             src="{{ $ak->iframe }}"
                             width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            @can('admin')
+                       <a class="btn mb-2 mt-2  btn-success" href="/dashboardAngkringan"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
+                       <a class="btn  mb-2 mt-2 btn-warning" href="/dashboardAngkringan/{{ $ak->id }}/edit"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
+                       <form action="/dashboardAngkringan/{{ $ak->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+                        @method('delete')
+                        @csrf
+                       <button class=" btn btn-danger"><i class="fa-solid text-dark fa-trash"></i> Hapus Postingan</button>
+                       </form>
+                       {{-- <a class="btn mb-2 btn-danger" href="/dashboardAlam/{{ $da->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a> --}}
+                       @endcan
                 {{-- <img src="assets/test.png" class="img-detail-taman d-xl-block d-lg-block d-md-block d-sm-none d-none"
                     alt=""> --}}
                 <div class="row pt-4">
@@ -27,7 +37,7 @@
                         <h3 class="garis-bawah ff-taman">{{ $ak->judul }}</h3>
                         <div class="row text-center justify-content-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2 justify-content-center">
-                                <img src="{{ asset('storage/' . $ak->gambar) }}" class="align-content-center align- gambar2-detail-taman" alt="">
+                                <img src="{{ asset('storage/' . $ak->gambar) }}" class="align-content-center gambar2-detail-taman" alt="">
                             </div>
                             {{-- <div class="col-lg-6 col-md-6 col-sm-6 col-12 ">
                                 <img src="assets/kopi.jpg" class="gambar2-detail-taman gambar-bawah-sm" alt="">

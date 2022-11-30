@@ -16,11 +16,20 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <h1 class="garis-bawah ff-taman">Detail Taman</h1>
                 @foreach($tamanku as $tm)
-                    
                 <iframe class="maps-detailtaman col-12"
                 src="{{ $tm->iframe }}"
                 width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+                @can('admin')
+            <a class="btn mb-2 mt-2  btn-success" href="/dashboardTaman"><i class="fa-solid fa-1x fa-dashboard"></i> Kembali ke Dashboard</a>
+            <a class="btn  mb-2 mt-2 btn-warning" href="/dashboardTaman/{{ $tm->id }}/edit"><i class="fa-solid fa-1x fa-edit"></i> Edit Postingan</a>
+            <form action="/dashboardTaman/{{ $tm->id }}" method="post" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="d-inline">
+             @method('delete')
+             @csrf
+            <button class=" btn btn-danger"><i class="fa-solid text-dark fa-trash"></i> Hapus Postingan</button>
+            </form>
+            {{-- <a class="btn mb-2 btn-danger" href="/dashboardAlam/{{ $da->id }}" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-1x fa-trash"></i> Hapus Postingan</a> --}}
+            @endcan
                 @endforeach
                 {{-- <img src="assets/test.png" class="img-detail-taman d-xl-block d-lg-block d-md-block d-sm-none d-none"
                 alt=""> --}}
@@ -28,7 +37,7 @@
                     @foreach ($tamanku as $tm)
                     <div class="col-xl-8 col-lg-8 col-md-7 mt-3 mt-xl-0 mt-md-0 mt-lg-0 mt-sm-0 col-sm-12 col-12">
                         <h3 class="garis-bawah ff-taman">{{ $tm->judul }}</h3>
-                        <div class="row text-center">
+                        <div class="row text-center d-flex justify-content-center">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-2">
                                 <img src="{{ asset('storage/' . $tm->gambar) }}" class="gambar2-detail-taman" alt="">
                             </div>

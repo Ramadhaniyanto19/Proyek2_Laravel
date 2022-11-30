@@ -1232,9 +1232,9 @@ footer .bag-1 a {
 
 /* ============= Halaman Alam List ============ */
 .img-alamlist {
-    max-height: 280px;
+    height: 280px;
     opacity: 0.7;
-    min-width: 100%;
+    width: 100%;
 }
 
 .text-alamlist {

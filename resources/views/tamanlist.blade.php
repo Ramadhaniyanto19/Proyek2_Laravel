@@ -23,7 +23,7 @@
                         @foreach ($tamansolo as $ts)
                         <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="card d-flex img-taman ">
-                                <img src="assets/{{ $ts->gambar }}" alt="...">
+                                <img src="{{ asset('storage/' . $ts->gambar) }}" alt="...">
                                 <div class="text-taman text-white ms-lg-2">
                                     <h3 class=" ff-taman">{{ $ts->judul }}</h3>
                                     <a href="/detailtaman/{{ $ts->id }}" class=" ff-taman text-white btn btn-bg ">More <img

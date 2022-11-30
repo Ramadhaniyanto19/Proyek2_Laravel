@@ -87,12 +87,6 @@
               List Taman
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboardAdmin*') ? 'active' : '' }}" href="/dashboardAdmin">
-              <span data-feather="layers"></span>
-              Admin List
-            </a>
-          </li>
         </ul>
       </div>
     </nav>

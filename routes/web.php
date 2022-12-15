@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardCafeController;
 use App\Http\Controllers\DashboardTamanController;
 use App\Http\Controllers\DashboardEdukasiController;
 use App\Http\Controllers\DashboardAngkringanController;
+use App\Http\Controllers\DashboardPengunjungController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,4 +62,5 @@ Route::resource('/dashboardEdukasi', DashboardEdukasiController::class)->middlew
 Route::resource('/dashboardCafe', DashboardCafeController::class)->middleware('admin');
 Route::resource('/dashboardTaman', DashboardTamanController::class)->middleware('admin');
 Route::resource('/dashboardAngkringan', DashboardAngkringanController::class)->middleware('admin');
+Route::resource('/dashboardPengunjung', DashboardPengunjungController::class)->middleware('admin');
 // End Dashboard

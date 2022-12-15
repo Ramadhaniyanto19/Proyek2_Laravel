@@ -87,6 +87,12 @@
               List Taman
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboardPengunjung*') ? 'active' : '' }}" href="/dashboardPengunjung">
+              <span data-feather="layers"></span>
+              Daftar Pengunjung
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

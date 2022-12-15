@@ -67,6 +67,17 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-5  mt-2 h-50 bg-dark text-white">
+            <div class="row me-2">
+              <div class="mt-2 col-lg-5 col-md-6 justify-content-center text-center">
+                <i class="fa-solid fa-people-group fa-3x"></i>
+              </div> 
+              <div class="mt-2 pb-2 col-lg-7 text-center">
+                <h5>Jumlah Pengunjung</h5>
+                <h6>{{ $jmlpengunjung }}</h6>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 

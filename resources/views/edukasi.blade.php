@@ -47,7 +47,7 @@
             <div class="col-lg-7">
                 <h2>{{ $de->judul }}</h2>
                 <div class="main-img">
-                    <img src="/assets/{{ $de->gambar }}" style="max-width:100%;" alt="">
+                    <img src="{{ asset('storage/'. $de->gambar) }}" style="max-width:100%;" alt="">
                 </div>
                 <p class="deskripsi-edukasi">{{ $de->deskripsi }}</p>
             </div>

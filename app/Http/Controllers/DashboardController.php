@@ -9,6 +9,7 @@ use App\Models\Edukasi;
 use App\Models\Angkringan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 
 class DashboardController extends Controller
 {
@@ -19,7 +20,8 @@ class DashboardController extends Controller
             'jmledukasi' => Edukasi::all()->count(),
             'jmlangkringan' => Angkringan::all()->count(),
             'jmltaman' => Taman::all()->count(),
-            'jmlcafe' => Cafe::all()->count()
+            'jmlcafe' => Cafe::all()->count(),
+            'jmlpengunjung' => User::where('is_admin', '0')->count()
         ]);
     }
 }

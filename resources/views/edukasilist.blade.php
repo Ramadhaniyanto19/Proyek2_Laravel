@@ -20,7 +20,7 @@
                         @foreach ($edukasilist as $el)
                         <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="card d-flex">
-                                <img src="assets/{{ $el->gambar }}" class="img-edukasilist" alt="...">
+                                <img src="{{asset('storage/'. $el->gambar) }}" class="img-edukasilist" alt="...">
                                 <div class="text-edulist text-white ms-lg-2">
                                     <h2 class="ff-taman txt-edulist">{{ $el->judul }}</h2>
                                     <a href="/edukasi/{{ $el->id }}" class=" ff-taman txt-a-edulist text-white btn btn-bg ">More <img

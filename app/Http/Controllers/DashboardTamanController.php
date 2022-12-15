@@ -94,9 +94,29 @@ class DashboardTamanController extends Controller
      * @param  \App\Models\Taman  $taman
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Taman $taman)
+    public function update(Request $request, Taman $dashboardTaman)
     {
-        //
+          $validatedata = Request()->validate([
+            'judul' => 'required|max:25',
+            'deskripsi' => 'required|min:300|max:700',
+            'gambar' => 'image|file|max:5000',
+            'location' => 'required',
+            'jam' => 'required',
+            'nomor_hp' => 'required',
+            'maps' => 'required',
+            'iframe' => 'required',
+        ]);
+
+            if($request->file('gambar')){
+            if($request->oldGambar){
+                Storage::delete($request->oldGambar);
+            }
+            $validatedata['gambar'] = $request->file('gambar')->store('gambar-taman');
+            }
+
+        $validatedata['deskripsi']= strip_tags($request->deskripsi);
+        Taman::where('id', $dashboardTaman->id)->update($validatedata);
+        return redirect('/dashboardTaman')->with('success', 'Data berhasil diupdate!');
     }
 
     /**

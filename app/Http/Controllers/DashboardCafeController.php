@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cafe;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardCafeController extends Controller
 {
@@ -93,7 +95,7 @@ class DashboardCafeController extends Controller
      * @param  \App\Models\Cafe  $cafe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cafe $cafe)
+    public function update(Request $request, Cafe $cafe, $id)
     {
           $validatedata = Request()->validate([
             'judul' => 'required|max:25',
@@ -102,7 +104,6 @@ class DashboardCafeController extends Controller
             'location' => 'required',
             'jam' => 'required',
             'nomor_hp' => 'required',
-            'fb' => 'required',
             'maps' => 'required',
             'iframe' => 'required',
         ]);

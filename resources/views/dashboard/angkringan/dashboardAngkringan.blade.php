@@ -4,6 +4,11 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Daftar Cafe</h1>
       </div>
+            @if (session()->has('success'))
+          <div class="alert alert-success col-8" role="alert">
+            {{ session('success') }}
+          </div>
+      @endif
           <div class="row">
         <div class="table-responsive">
           <a href="/dashboardAngkringan/create" class="btn btn-success">Create Data</a>

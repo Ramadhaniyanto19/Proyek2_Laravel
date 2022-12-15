@@ -103,7 +103,7 @@ class DashboardEdukasiController extends Controller
      * @param  \App\Models\Edukasi  $edukasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Edukasi $edukasi)
+    public function update(Request $request, Edukasi $dashboardEdukasi)
     {
             $validatedata = Request()->validate([
             'judul' => 'required|max:25',
@@ -129,7 +129,7 @@ class DashboardEdukasiController extends Controller
 
         $validatedata['deskripsi']= strip_tags($request->deskripsi);
         $validatedata['sejarah']= strip_tags($request->sejarah);
-        Edukasi::where('id', $id)->update($validatedata);
+        Edukasi::where('id', $dashboardEdukasi->id)->update($validatedata);
         return redirect('/dashboardEdukasi')->with('success', 'Data berhasil diupdate!');
 
     }

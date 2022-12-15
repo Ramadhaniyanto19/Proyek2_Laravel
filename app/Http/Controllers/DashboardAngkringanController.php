@@ -95,7 +95,7 @@ class DashboardAngkringanController extends Controller
      * @param  \App\Models\Angkringan  $angkringan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Angkringan $angkringan)
+    public function update(Request $request, Angkringan $dashboardAngkringan)
     {
          $validatedata = Request()->validate([
             'judul' => 'required|max:25',
@@ -104,7 +104,6 @@ class DashboardAngkringanController extends Controller
             'location' => 'required',
             'jam' => 'required',
             'nomor_hp' => 'required',
-            'fb' => 'required',
             'maps' => 'required',
             'iframe' => 'required',
         ]);
@@ -117,7 +116,7 @@ class DashboardAngkringanController extends Controller
             }
 
         $validatedata['deskripsi']= strip_tags($request->deskripsi);
-        Cafe::where('id', $id)->update($validatedata);
+        Angkringan::where('id', $dashboardAngkringan->id)->update($validatedata);
         return redirect('/dashboardAngkringan')->with('success', 'Data berhasil diupdate!');
     }
 

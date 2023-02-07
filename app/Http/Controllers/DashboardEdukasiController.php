@@ -17,9 +17,13 @@ class DashboardEdukasiController extends Controller
      */
     public function index()
     {
+        $edukasi = Edukasi::latest();
+        if(request('search')){
+        $edukasi->where('judul', 'like', '%' . request('search') . '%');
+        }
         return view ('dashboard.edukasi.dashboardEdukasi',[
             "tittle" => "Daftar Edukasi",
-            "edukasi" => Edukasi::all()
+            "edukasi" => $edukasi->get()
         ]);
     }
 

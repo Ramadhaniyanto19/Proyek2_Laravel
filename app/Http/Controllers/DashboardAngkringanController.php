@@ -17,8 +17,13 @@ class DashboardAngkringanController extends Controller
      */
     public function index()
     {
+        $angkringan = Angkringan::latest();
+        if(request('search')){
+            $angkringan->where('judul', 'like', '%' . request('search') . '%');
+        }
         return view('dashboard.angkringan.dashboardAngkringan', [
-            'angkringan' => Angkringan::get()
+            'tittle' => 'Dashboard Angkringan',
+            'angkringan' => $angkringan->get()
         ]);
     }
 

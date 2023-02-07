@@ -16,8 +16,15 @@ class DashboardTamanController extends Controller
      */
     public function index()
     {
+        $taman = Taman::latest();
+        if(request('search')){
+        $taman->where('judul', 'like', '%' . request('search') . '%');
+        }
+
         return view('dashboard.taman.dashboardTaman', [
-            'taman' => Taman::get()
+            'tittle' => 'Daftar Taman',
+            'taman'=> $taman->get()
+            
         ]);
     }
 

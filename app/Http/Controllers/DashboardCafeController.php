@@ -16,9 +16,14 @@ class DashboardCafeController extends Controller
      */
     public function index()
     {
+        $cafe = Cafe::latest();
+        if(request('search')){
+        $cafe->where('judul', 'like', '%' . request('search') . '%');
+        }
+
         return view('dashboard.cafe.dashboardCafe',[
             'tittle'=>'Dashboard Cafe',
-            'cafe' => Cafe::get()
+            'cafe' => $cafe->get()    
         ]);
     }
 

@@ -38,7 +38,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item {{ ($tittle === 'Wisata Alam') ? 'active' : '' }}" href="/alamlist">Alam</a></li>
-              <li><a class="dropdown-item {{ ($tittle === 'Wisata Edukasi') ? 'active' : '' }}" href="/edukasilist">Edukasi</a></li>
+              {{-- <li><a class="dropdown-item {{ ($tittle === 'Wisata Edukasi') ? 'active' : '' }}" href="/edukasilist">Edukasi</a></li> --}}
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -81,10 +81,10 @@
         </li>
               @else
               <li class="nav-item d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
+                <a class="nav-link" aria-current="page" href="/register"><i class="me-2 fa-solid fa-right-from-bracket"></i>Daftar Tamu</a>
               </li>
               <li class="nav-item d-block d-lg-none d-sm-block d-md-block d-xl-none">
-                <a class="nav-link" aria-current="page" href="/login"><i class="me-2 fa-solid fa-right-from-bracket"></i>Login</a>
+                <a class="nav-link" aria-current="page" href="/register"><i class="me-2 fa-solid fa-right-from-bracket"></i>Daftar Tamu</a>
               </li>
           @endauth
 

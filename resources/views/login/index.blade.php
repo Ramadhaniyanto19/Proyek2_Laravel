@@ -51,8 +51,6 @@
                   <label for="Password">Password</label>
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-                <small class="text-center d-block mt-3 text-white">Not Registered? <a href="/register">Register Now!</a></small>
-                <p class="mt-5 mb-3 text-muted text-center">&copy; 2017–2022</p>
               </form>
             </main>
         </div>

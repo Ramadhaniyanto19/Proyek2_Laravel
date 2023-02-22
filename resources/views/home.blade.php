@@ -33,11 +33,11 @@
           </div>
         </div>
         <div class="carousel-item carousel-itemku">
-          <img src="assets/tirtonadi.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
+          <img src="assets/taman.jpg" class="d-block w-100 x-100" alt="assets/cok.jpg">
           <div class="carousel-caption">
-            <h1>Wisata Edukasi</h1>
-            <p>Pengen tahu sejarah di Solo? bisa cek langsung!</p>
-            <a href="/edukasilist" class="btn btn-primary-2">More Information</a>
+            <h1>Taman</h1>
+            <p>Pengen nongkrong ditaman yang asik? bisa cek langsung!</p>
+            <a href="/tamanlist" class="btn btn-primary-2">More Information</a>
           </div>
         </div>
         <div class="carousel-item carousel-itemku">
@@ -195,7 +195,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-12 overflow-hidden">
-            <h3>Wisata Alam & Wisata Edukasi</h3>
+            <h3>Wisata Alam</h3>
             <p class="all-text">Gak cuma sampe tongkrongan aja yang ada di website ini loh, kita juga punya beberapa wisata yang bisa jadi tempat kalian healing hihi. Kalian lebih tertarik wisata edukasi yang mengarah bahas sejarah atau lebih suka menikmati wisata alam seperti di pantai atau semacamnya nih? Jangan sampe ketinggalan update dari kami ya, cuma ada di website ini yang membahas wisata edukasi maupun alam yang juga menyediakan informasi detailll bangetttt.</p>
               <img src="assets/tawangmangu.jpg" style="max-width: 100%; " alt="">
           </div>

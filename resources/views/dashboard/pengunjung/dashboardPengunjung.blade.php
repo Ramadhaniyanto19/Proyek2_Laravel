@@ -17,6 +17,7 @@
                   <th class="text-center" >No</th>
                   <th>Username</th>
                   <th>Email</th>
+                  <th>Alamat</th>
                   {{-- <th>Jam</th>
                     <th>Sejarah</th>
                     <th>Location</th>
@@ -34,6 +35,7 @@
                   <td class="col-lg-1 text-center">{{ $loop->iteration }}</td>
                   <td class="col-6">{{ $p->username }}</td>
                   <td class="col-6">{{ $p->email }}</td>
+                  <td class="col-6">{{ $p->alamat }}</td>
                   {{-- <td class="col-lg-3">
                     <a href="/alam/{{ $p->id }}"><i class="fa-solid text-dark fa-eye"></i></a>
                     <a href="/dashboardAlam/{{ $p->id }}/edit"><i class="fa-solid text-dark fa-edit"></i></a>

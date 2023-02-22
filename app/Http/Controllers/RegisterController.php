@@ -16,7 +16,8 @@ class RegisterController extends Controller
     public function index()
     {
         return view('register.index', [
-            'tittle' => 'Register'
+            'tittle' => 'Register',
+            'pengunjung' => User::where('is_admin', '0')->get()
         ]);
     }
 
@@ -28,7 +29,8 @@ class RegisterController extends Controller
        $validatedata = Request()->validate([
             'username' => 'required|min:4|max:8',
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:8|max:255'
+            'password'=>'min:0',
+            'alamat' => 'required'
         ]);
 
         $validatedata['password'] = bcrypt($validatedata['password']);
@@ -37,7 +39,7 @@ class RegisterController extends Controller
 
         Request()->session()->flash('success', 'Registration Successfull!! Please Login');
 
-        return redirect('/login');
+        return redirect('/register');
     }
 
     /**

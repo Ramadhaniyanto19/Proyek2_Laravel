@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 mt-2 me-2 h-50 bg-dark justify-content-center text-white">
+          {{-- <div class="col-lg-3 mt-2 me-2 h-50 bg-dark justify-content-center text-white">
             <div class="row me-2">
               <div class="mt-2 col-lg-4 col-md-6 justify-content-center text-center">
                 <i class="fa-solid fa-school text-warning fa-4x"></i>
@@ -33,7 +33,7 @@
                 <h6>{{ $jmledukasi }}</h6>
               </div>
             </div>
-          </div>
+          </div> --}}
           <div class="col-lg-3 mt-2 me-2 h-50 bg-dark justify-content-center text-white">
             <div class="row me-2">
               <div class="mt-2 col-lg-5 col-md-6 justify-content-center text-center">

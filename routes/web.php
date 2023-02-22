@@ -31,20 +31,20 @@ use App\Http\Controllers\DashboardPengunjungController;
 
 Route::get('/', [HomeController::class, 'index'] ); //routes home
 
-Route::get('/alamlist', [AlamController::class, 'alamlist'])->middleware('auth');
-Route::get('/alam/{id}', [AlamController::class, 'alam'])->middleware('auth');
+Route::get('/alamlist', [AlamController::class, 'alamlist']);
+Route::get('/alam/{id}', [AlamController::class, 'alam']);
 
-Route::get('/edukasi/{id}', [EdukasiController::class, 'edukasi'])->middleware('auth');
-Route::get('/edukasilist', [EdukasiController::class, 'edukasilist'])->middleware('auth');
+// Route::get('/edukasi/{id}', [EdukasiController::class, 'edukasi']);
+// Route::get('/edukasilist', [EdukasiController::class, 'edukasilist']);
 
-Route::get('/tamanlist', [TamanController::class, 'taman'])->middleware('auth');
-Route::get('/detailtaman/{id}', [TamanController::class, 'detailtaman'])->middleware('auth');
+Route::get('/tamanlist', [TamanController::class, 'taman']);
+Route::get('/detailtaman/{id}', [TamanController::class, 'detailtaman']);
 
-Route::get('/angkringanlist', [AngkringanController::class, 'angkringan'])->middleware('auth');
-Route::get('/detailangkringan/{id}', [AngkringanController::class, 'showangkringan'])->middleware('auth');
+Route::get('/angkringanlist', [AngkringanController::class, 'angkringan']);
+Route::get('/detailangkringan/{id}', [AngkringanController::class, 'showangkringan']);
 
-Route::get('/cafelist', [CafeController::class, 'cafe'])->middleware('auth');
-Route::get('/detailcafe/{id}', [CafeController::class, 'showdetail'])->middleware('auth');
+Route::get('/cafelist', [CafeController::class, 'cafe']);
+Route::get('/detailcafe/{id}', [CafeController::class, 'showdetail']);
 
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login']);

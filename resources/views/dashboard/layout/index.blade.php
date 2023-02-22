@@ -61,12 +61,12 @@
               List Wisata Alam
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboardEdukasi*') ? 'active' : '' }}" href="/dashboardEdukasi">
               <span data-feather="shopping-cart"></span>
               List Wisata Edukasi
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboardCafe*') ? 'active' : '' }}" href="/dashboardCafe">
               <span data-feather="bar-chart-2"></span>
